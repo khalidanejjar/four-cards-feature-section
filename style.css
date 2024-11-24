@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font-family: "Poppins", sans-serif; */
+
+:root{
+    /* Font */
+    --fs: 15px;
+    --poppins:"Poppins", sans-serif;
+
+    --fw-light: 200;
+    --fw-normal:400;
+    --fw-bold:700;
+
+    --fs-x-sm:0.9375rem;
+    --fs-sm: 1.25rem;
+    --fs-md:1.625rem;
+    --fs-lg: 2.5rem;
+
+
+
+    /* Primary color */
+    --red:hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange:hsl(34, 97%, 64%);
+    --blue:hsl(212, 86%, 64%);
+    /* Neutral color */
+    --dark-blue:hsl(234, 12%, 34%);
+    --grayish-blue:hsl(229, 6%, 66%);
+    --light-gray:hsl(0, 0%, 98%);
+}
+
+html,body{
+    font-family: var(--poppins);
+    font-weight: var(--fw-normal);
+    line-height: 1.7;
+    color: var(--grayish-blue);
+    padding-bottom: 5rem;
+}
+
+h1,h2{
+    color: var(--dark-blue);
+    /* line-height: 1.1; */
+}
+.wrapper{
+    margin-inline: auto;
+    max-width: 1100px ;
+    padding-inline: 2rem;
+}
+.wrapper--sm{
+    max-width: 550px;
+}
+
+/* HEADER */
+header{
+    text-align: center;
+    margin-block: 6rem;
+}
+header h1{
+    line-height: 1.4;
+    font-weight: var(--fw-light);
+    margin-bottom: 1rem;
+}
+header h1 span{
+    font-weight: var(--fw-bold);
+}
+/* Main */
+
+
+.card{
+    padding: 2rem;
+    box-shadow: 0rem .5rem 1.4rem -.5rem rgba(0, 0, 0, 0.2) ;
+    border-radius: 4px;
+    border-top: 4px solid ;
+    font-size: var(--fs-x-sm);
+}
+
+.layout-grid{
+    display: grid;
+    gap: 2rem;
+    grid-auto-columns: 1fr; /*so that the cards will have the same size*/
+}
+.card:nth-child(1){
+    grid-area: one;
+}
+.card:nth-child(2){
+    grid-area: two;
+}
+.card:nth-child(3){
+    grid-area: three;
+}
+.card:nth-child(4){
+    grid-area: four;
+}
+@media (min-width:880px) {
+    .layout-grid{
+        grid-template-areas: 
+        '... two ...'
+        'one two four'
+        'one three four'
+        '...three ...'
+        ;
+    }
+}
+.border-red{
+    border-color: var(--red);
+}
+.border-orange{
+    border-color: var(--orange);
+}
+.border-cyan{
+    border-color: var(--cyan);
+}
+.border-blue{
+    border-color: var(--blue);
+}
+.card-title{
+    font-size: var(--fs-sm);
+}
+.card-img{
+    display: block;
+    margin-left: auto;
+    margin-top: 1.8rem;
+}
